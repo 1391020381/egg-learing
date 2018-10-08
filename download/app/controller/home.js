@@ -8,6 +8,8 @@ class HomeController extends Controller {
     this.ctx.body = [
       '<a download href="/download">download</a>',
       '<br>',
+      '<a  href="www.baidu.com">百度</a>',
+      '<br>',
       '<a download href="/download-image">download image</a>',
     ].join('');
   }
@@ -15,16 +17,17 @@ class HomeController extends Controller {
     this.logger.info('dir:', this.app.config.static);
     const filePath = path.resolve(this.app.config.static.dir, 'hello.txt');
     this.logger.info('filePath:', filePath);
-    // this.ctx.set('Content-Type', 'application/octet-stream');
-    // this.ctx.body = fs.createReadStream(filePath);
-    const content = fs.readdirSync(filePath);
-    this.logger.info('content:', content);
-    this.ctx.body = content;
+    this.ctx.attachment('hello.txt');
+    this.ctx.set('Content-Type', 'application/octet-stream');
+    this.ctx.body = fs.createReadStream(filePath);
+    // const content = fs.readFileSync(filePath);
+    // this.logger.info('content:', content);
+    // this.ctx.body = content.toString();
   }
   async downloadImage() {
     const url = 'http://cdn2.ettoday.net/images/1200/1200526.jpg';
     const res = await this.ctx.curl(url, {
-      stream: true,
+      streaming: true,
     });
     this.ctx.type = 'jpg';
     this.ctx.body = res.res;

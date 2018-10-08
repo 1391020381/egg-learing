@@ -5,7 +5,7 @@ class TopicService extends Service {
     super(ctx);
     this.root = 'https://cnodejs.org/api/v1';
   }
-  async require(url, opts) {
+  async request(url, opts) {
     url = `${this.root}${url}`;
     opts = Object.assign({
       timeout: [ '30s', '30s' ],
@@ -23,6 +23,39 @@ class TopicService extends Service {
         data: result.data,
       });
     }
+  }
+  async show(params) {
+    const result = await this.request(`/topic/${params.id}`, {
+      data: {
+        mdrender: params.mdrender,
+        accesstoken: params.accesstoken,
+      },
+    });
+    this.checkSuccess(result);
+  }
+  async list(params) {
+    const result = await this.request('/topics', {
+      data: params,
+    });
+    this.checkSuccess(result);
+    return result.data.data;
+  }
+  async create(params) {
+    const result = await this.request('/topics', {
+      method: 'post',
+      data: params,
+      contentType: 'json',
+    });
+    this.checkSuccess(result);
+    return result.data.topic_id;
+  }
+  async update(params) {
+    const result = await this.request('/topics/update', {
+      method: 'post',
+      data: params,
+      contentType: 'json',
+    });
+    this.checkSuccess(result);
   }
 }
 module.exports = TopicService;

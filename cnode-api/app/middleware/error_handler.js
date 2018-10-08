@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (option, app) => {
   return async function(ctx, next) {
     try {
@@ -15,5 +16,4 @@ module.exports = (option, app) => {
       ctx.status = status;
     }
   };
-}
-;
+};

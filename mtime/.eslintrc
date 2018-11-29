@@ -6,5 +6,9 @@
       "error",
       "windows"
     ]
+  },
+  "globals": {
+    "window": true,
+    "document": true
   }
 }

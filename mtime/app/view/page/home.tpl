@@ -44,8 +44,7 @@
 
   <div class="container">
     <div class="columns is-multiline">
-    {# {{hotPlayMovies|dump}} #}
-      {% for item in hotPlayMovies.data.movies %}
+      {% for item in hotPlayMovies.movies %}
         <div class="column is-3">
           <a href="/movie/{{ item.movieId }}">
             <div class="card">

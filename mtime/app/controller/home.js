@@ -7,8 +7,8 @@ class HomeController extends Controller {
     const { location, locations } = await this.ctx.helper.getLocation(ctx);
     const hotPlayMovies = await this.app.curl(`https://api-m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=${location.id}`, {
       dataType: 'json',
-    });
-    // this.logger.info('hotPlayMovies:', hotPlayMovies);
+    }).then(res => res.data);
+
     // 注意 nunjucks项目中版本 在取数据时 多了一个字段
     await ctx.render('page/home.tpl', { location, locations, hotPlayMovies });
   }

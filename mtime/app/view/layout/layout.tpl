@@ -13,8 +13,8 @@
     <link href="/public/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <% include "./header.tpl"  %>
-    <% block content %> {% endblock %}
+    {% include "./header.tpl"  %}
+    {% block content %} {% endblock %}
     {% include "./footer.tpl" %}
     {% include "./script.tpl" %}
 </body>

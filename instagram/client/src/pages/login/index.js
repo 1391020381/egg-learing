@@ -7,14 +7,23 @@ import SingnIn from './components/signIn'
 import SingnUp from './components/signUp'
 
 
+import Footer from '../../components/footer/index.js'
+
 class Login extends Component {
 
     render() {
         return (
-            <div>
-                <SingnIn />
-                <SingnUp />
-            </div>
+            <main>
+                <article>
+                    <section>
+                        <SingnIn />
+                    </section>
+                    <section>
+                        <SingnUp />
+                    </section>
+                </article>
+                <Footer />
+            </main>
         )
     }
 }

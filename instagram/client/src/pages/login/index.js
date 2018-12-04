@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
+import Signup from './components/signup/index.js'
 
 class Login extends Component {
     render() {
         return (
-            <div>
-                Login
-            </div>
+            <Signup />
         )
     }
 }
-
 
 export default Login

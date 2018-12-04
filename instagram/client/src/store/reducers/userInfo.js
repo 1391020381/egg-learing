@@ -16,3 +16,5 @@ const userInfo = (state = defautValue, action) => {
             return state
     }
 }
+
+export default userInfo

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Instagram from './pages/index.js'
+// import logo from './logo.svg';
 import './App.css';
+import Intagram from './pages/index.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          justdoit
-        </header>
-      </div>
+      <Intagram />
     );
   }
 }

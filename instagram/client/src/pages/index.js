@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-
+// import '@scss/base.scss'
+import '../../assets/style/base.scss'
 // 页面
 
 import Login from './login/index.js'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import './index.scss'
+// import PropTypes from 'prop-types'
+// import { connect } from 'react-redux'
+import Style from './index.scss'
 
 import SingnIn from './components/signIn'
 import SingnUp from './components/signUp'
@@ -13,12 +13,13 @@ class Login extends Component {
 
     render() {
         return (
-            <main>
-                <article>
-                    <section>
-                        <SingnIn />
+            <main class={Style.login}>
+                <article className="login_info">
+                    <section className="descript">
+                        <div className="photo"></div>
                     </section>
-                    <section>
+                    <section className="login_dialog">
+                        <SingnIn />
                         <SingnUp />
                     </section>
                 </article>

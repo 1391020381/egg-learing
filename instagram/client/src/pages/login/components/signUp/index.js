@@ -6,7 +6,7 @@ import { Form, Icon, Input, Button, notification } from 'antd'
 import Style from './index.scss'
 
 const FormItem = Form.Item
-class SignUp extends Component {
+class SignUpForm extends Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -52,5 +52,5 @@ class SignUp extends Component {
         )
     }
 }
-
+const SignUp = Form.create()(SignUpForm);
 export default SignUp

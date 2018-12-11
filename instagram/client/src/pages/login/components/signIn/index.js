@@ -43,7 +43,7 @@ class SignIpForm extends Component {
                         {getFieldDecorator('password', {
                             rules: [{ required: true, message: 'Please input your password' }]
                         })(
-                            <div className={`form-input ${this.state.lockEmpty && 'active'}`} onChnage={this.onChangeHandler.bind(this, 'lock')}>
+                            <div className={`form-input ${this.state.lockEmpty && 'active'}`} onChange={this.onChangeHandler.bind(this, 'lock')}>
                                 <label htmlFor="label-lock">密码</label>
                                 <Input id="label-lock" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" />
                             </div>

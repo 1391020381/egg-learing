@@ -1,0 +1,1 @@
+* npx sequelize init:config 需要先按照 sequelize-cli    npm install --save-dev sequelize-cli 或者 yarn add sequelize-cli --save-dev
